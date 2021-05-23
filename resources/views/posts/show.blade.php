@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="color: white">
     <div class="row">
         <div class="col-8">
             <img src="/storage/{{$post->img}}" class="w-100"/>
@@ -16,7 +16,7 @@
                     </span>
                 </div>
 
-                <hr>
+                <hr color="#FFFFFF">
 
                 <span>
                     <a class="pr-2" href="/profile/{{$post->user->id}}">{{$post->user->username}} </a>

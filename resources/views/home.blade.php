@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    @foreach($posts as $post)
+<div class="container" style="color: white">
+    @foreach($posts->reverse() as $post)
         <div style="background-color: #323232">
         <div class="row pt-5">
             <div class="col-8">
@@ -15,15 +15,16 @@
                         <span class="pl-4">
                             <a href="/profile/{{$post->user->id}}">{{$post->user->username}}
                         </span>
+
+                        <div class="pl-3" style="color: white; cursor: default">{{$post->created_at}}</div>
                     </div>
 
-                    <hr>
+                    <hr color="#FFFFFF">
                     <a href="#"></a>
                     {{$post->description}}
 
                 </div>
             </div>
-
         </div>
 
         </div>

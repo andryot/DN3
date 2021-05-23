@@ -14,19 +14,13 @@
                     <h1 class=" pr-3">{{$user->username}}</h1>
                 </div>
                 @can('update', $user->profile)
-                    <a href="/post/create">Dodaj objavo</a>
+                    <div class="d-flex justify-content-between align-bottom">
+                        <div></div>
+                        <a href="/profile/{{$user->id}}/edit">Uredi profil</a>
+                    </div>
                 @endcan
 
             </div>
-
-
-            @can('update', $user->profile)
-                <div class="d-flex justify-content-between align-bottom">
-                    <div></div>
-                    <a href="/profile/{{$user->id}}/edit">Uredi profil</a>
-                </div>
-            @endcan
-
                 <div class="pr-5"><strong>{{$user->posts->count()}}</strong> posts</div>
 
             <div class="pt-4 font-weight-bold"> {{$user->profile->title}} </div>

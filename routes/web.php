@@ -26,4 +26,6 @@ Route::get('/post/create', [App\Http\Controllers\PostController::class, 'create'
 Route::post('/post', [App\Http\Controllers\PostController::class, 'post']);
 Route::get('/post/{post}', [App\Http\Controllers\PostController::class, 'show']);
 
+Route::get('/search', [App\Http\Controllers\HomeController::class, 'search']);
+
 

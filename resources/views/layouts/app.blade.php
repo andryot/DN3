@@ -22,24 +22,29 @@
 <body style="background-color: #121212">
     <div id="app">
         <nav class="navbar navbar-expand-md" style="background-color: #222222">
-            <div class="container">
+            <div class="container" style="color: white;">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div><img src="/png/fri.png" style="height: 20px; border-right: 1px solid #333;" class="pr-3"> </div>
                     <div class="pl-3">FRIstagram</div>
                 </a>
+
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto align-items-center">
                         <!-- Authentication Links -->
+                        Išči uporabnika:
+                        <form action="/search" enctype="multipart/form-data" method="get" class="pr-5 pl-3">
+                            <div class="d-flex">
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" autocomplete="username" autofocus>
+                            </div>
+                        </form>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -53,7 +58,8 @@
                                 </li>
                             @endif
                         @else
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center" style="color: white">
+
                                 <a class="nav-link" href="/profile/{{Auth::user()->id}}">Profil</a>
                                 <a class="nav-link" href="/post/create">Dodaj objavo</a>
                                 <li class="nav-item dropdown pl-4">
